@@ -1,1 +1,162 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  --dark-green: #026670;
+  --dark-blue: #00303F;
+  --light-blue: #CAE4DB;
+  --light-green: #9FEDD7;
+  --yellow: #FCE181;
+  --light-yellow: #FEF9C7;
+  --gray: #EDEAE5;
+  --orange: #f37800;
+  --dark-text: #4a4a4a;
+  --gray-brown: #efeae6;
+  --light-gray-brown: #f5f0eb;
+  --brown-text: #707070;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  background-color: var(--light-gray-brown);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: Sansita, serif;
+  letter-spacing: 0.03em;
+  color: var(--brown-text);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  list-style: none;
+}
+
+.nav-links > li + li {
+  margin-left: 0.8em;
+}
+
+.nav-links > li > a {
+  display: block;
+  padding: 1em 0;
+  color: var(--dark-text);
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.nav-links__icon {
+  height: 2em;
+  width: 2em;
+  vertical-align: -0.6em;
+  color: white;
+}
+.nav-links > li > a:hover {
+  /*color: hsl(40, 100%, 70%);*/
+}
+
+@media (min-width: 30em) {
+  .main-nav {
+    position: fixed;
+    width: 200px;
+    /*top: 8.25rem;*/
+    left: 0;
+    z-index: 10;
+    /*background-color: transparent;
+    transition: background-color .5s linear;*/
+    /*transition: width .15s ease-in-out,box-shadow .15s ease-in-out;*/
+    /*border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;*/
+
+    height: 100vh;
+  }
+  .main-nav:hover {
+    /*background-color: rgba(0, 0, 0, 0.6);*/
+    /*background-color: var(--light-green);*/
+    /*background-color: #222;*/
+    /*width:200px;*/
+
+    /*background-color: var(--dark-green);*/
+  }
+}
+
+@media (min-width: 30em) {
+  .nav-links {
+    display: block;
+    padding: 1em;
+    margin-bottom: 0;
+  }
+
+  .nav-links > li + li {
+    margin-left: 0;
+  }
+
+  .nav-links__label {
+    display: inline-block;
+    margin-left: 1.5em;
+    padding-right: 1em;
+    opacity: 0;
+    transform: translate(-1em);
+    transition: transform .15s ease-in-out,
+    opacity 0.05s linear;
+  }
+
+  .nav-links:hover .nav-links__label,
+  .nav-links a:focus > .nav-links__label {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  .nav-links__icon {
+    transition: transform 0.2s ease-out;
+  }
+
+  .nav-links a:hover > .nav-links__icon,
+  .nav-links a:focus > .nav-links__icon {
+    transform: scale(1.5);
+  }
+  .nav-links a:hover > .nav-links__label,
+  .nav-links a:focus > .nav-links__label {
+    transform: scale(1.3) translate(1.2em);
+    color: var(--orange);
+  }
+}
+
+
+.left_pane {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 3.8em;
+  border-right: 2px solid var(--orange);
+  height: 100vh;
+  /*border-right: 1px solid #181818;*/
+
+  /*background-color: #222;*/
+  background-color: white;
+  /*color: #aaa;*/
+  overflow: hidden;
+  transition: width 0.2s ease-in-out;
+}
+
+.left_pane:hover {
+  width:200px;
+}
+
